@@ -71,8 +71,8 @@ uv run python scripts/evaluation/run_range.py --mode gamesense_tune --drill stra
 
 ## 参考文献
 
-- Lu, W., He, J., Zhang, Z., Guo, Y., and Zang, T. Cultivating Game Sense for Yourself: Making VLMs Gaming Experts. In *Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)*, pp. 13132–13152, 2025.
-- Tan, W., Zhang, W., Xu, X., et al. Cradle: Empowering Foundation Agents towards General Computer Control. In *Proceedings of the 42nd International Conference on Machine Learning*, PMLR 267, 2025.
-- He, Y., Yan, D., Jin, K., Fang, B., and Li, S. A Robotic Hand with Soft Transmission Systems for Automated Operations of Computer Mouse. *Advanced Intelligent Systems*, 7, 2400966, 2025. https://doi.org/10.1002/aisy.202400966
-- Todorov, E., Erez, T., and Tassa, Y. MuJoCo: A Physics Engine for Model-Based Control. In *Proceedings of the IEEE/RSJ International Conference on Intelligent Robots and Systems*, pp. 5026–5033, 2012.
+- Lu, W., He, J., Zhang, Z., Guo, S. Y., and Zang, T. Cultivating Gaming Sense for Yourself: Making VLMs Gaming Experts. In *Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)*, pp. 13132–13152, 2025. https://doi.org/10.18653/v1/2025.acl-long.643
+- Tan, W., Zhang, W., Xu, X., et al. Cradle: Empowering Foundation Agents towards General Computer Control. In *Proceedings of the 42nd International Conference on Machine Learning*, PMLR 267, pp. 58658–58725, 2025.
+- He, Y., Yan, D., Jin, K., Fang, B., and Li, S. A Robotic Hand with Soft Transmission Systems for Automated Operations of Computer Mouse. *Advanced Intelligent Systems*, 7(8), 2400966, 2025. https://doi.org/10.1002/aisy.202400966
+- Todorov, E., Erez, T., and Tassa, Y. MuJoCo: A Physics Engine for Model-Based Control. In *Proceedings of the IEEE/RSJ International Conference on Intelligent Robots and Systems*, pp. 5026–5033, 2012. https://doi.org/10.1109/IROS.2012.6386109
 - idoraz1. ValTrainer. GitHub repository. https://github.com/idoraz1/ValTrainer (accessed 2026-11-02)
