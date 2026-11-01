@@ -1,0 +1,57 @@
+[screen]
+width = 960
+height = 540
+hfov_deg = 103.0
+font = "DejaVuSans.ttf"
+
+[mouse]
+dpi = 800
+sensitivity = 0.35
+deg_per_count = 0.07
+
+[control]
+initial_mouse_xy = [0.18, 0.0]
+move_seconds = 0.20
+settle_seconds = 0.04
+press_seconds = 0.12
+hold_seconds = 0.10
+release_seconds = 0.16
+finish_seconds = 0.12
+finger_travel = 0.023
+press_threshold = 0.002
+release_threshold = 0.0006
+angle_tolerance_deg = 0.35
+fps = 30
+max_action_seconds = 3.0
+
+[drill]
+mode = "head_flicks"
+targets = 10
+seed = 7
+eye_height_m = 1.65
+head_radius_m = 0.14
+torso_radius_m = 0.22
+torso_height_m = 0.65
+strafe_speed_mps = 2.6
+
+[gsm]
+kp_yaw = 1.0
+kp_pitch = 1.0
+lead_seconds = 0.0
+fire_tolerance_deg = 0.45
+
+[api]
+model = "claude-haiku-5-5"
+max_calls = 40
+max_tokens = 1024
+timeout_seconds = 60.0
+budget_usd = 0.0
+
+[api.pricing]
+model = "claude-haiku-5-5"
+input_per_million_usd = 0.10
+output_per_million_usd = 0.50
+cache_read_multiplier = 0.10
+max_input_tokens_at_rate = 100000
+verified_on = "2026-10-31"
+source = "https://platform.claude.com/docs/en/about-claude/pricing"
