@@ -11,7 +11,7 @@ AI に渡すのは一人称の画面画像だけです。ボットの 3D 座標�
 3. **マウスを動かす**：2 自由度のアームが逆運動学と PD 制御でマウスを机の上で動かします。マウスが机に接している間（または光学センサの浮き上がり許容 1.0 mm 以内）だけ、移動量を視点の回転に変えます。
 4. **クリックする**：指先の 1 自由度の部品が左ボタンを押し込みます。2.0 mm 以上押し込んで離すと 1 発の射撃になります。
 
-左右に動くボットには、色マスクで頭を追う学習なしの高速制御（`ShootingGSM`）を使います。アームの移動とクリックには時間がかかるため（平均 0.47 秒）、そのままでは撃つときにボットがずれた位置にいます。そこで Round 1 の計測値（動作時間・角度誤差・追従誤差）と画面画像を Claude Haiku に渡し、予測時間（`lead_seconds`）を含む 3 つの数値を 1 回だけ返させて Round 2 で使います。予測時間を動作時間に合わせるという方針はプロンプトで与えています。これは [GameSense（Lu et al., ACL 2025）](https://aclanthology.org/2025.acl-long.643/) の「遅い VLM が速い制御を調整する」という考え方を簡略化したもので、本家のように学習済みモデルを使ったり、VLM が制御コードを書き直したりはしません。
+左右に動くボットには、色マスクで頭を追う学習なしの高速制御（`ShootingGSM`）を使います。アームの移動とクリックには時間がかかるため（平均 0.47 秒）、そのままでは撃つときにボットがずれた位置にいます。そこで Round 1 の計測値（動作時間・角度誤差・追従誤差）と画面画像を Claude Haiku に渡し、予測時間（`lead_seconds`）を含む 3 つの数値を 1 回だけ返させて Round 2 で使います。予測時間を動作時間に合わせるという方針はプロンプトで与えています。これは GameSense（Lu et al., 2025） の「遅い VLM が速い制御を調整する」という考え方を簡略化したもので、本家のように学習済みモデルを使ったり、VLM が制御コードを書き直したりはしません。
 
 ## 結果（固定シード `seed = 7`）
 
@@ -68,3 +68,11 @@ uv run python scripts/evaluation/run_range.py --mode gamesense_tune --drill stra
   - `recording.py` / `runner.py`：録画と評価のループ
 - `scripts/`：実行の入口（`simulation/preview_range.py`、`evaluation/run_range.py`）
 - `tests/`：単体テスト
+
+## 参考文献
+
+- Lu, W., He, J., Zhang, Z., Guo, Y., and Zang, T. Cultivating Game Sense for Yourself: Making VLMs Gaming Experts. In *Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)*, pp. 13132–13152, 2025.
+- Tan, W., Zhang, W., Xu, X., et al. Cradle: Empowering Foundation Agents towards General Computer Control. In *Proceedings of the 42nd International Conference on Machine Learning*, PMLR 267, 2025.
+- He, Y., Yan, D., Jin, K., Fang, B., and Li, S. A Robotic Hand with Soft Transmission Systems for Automated Operations of Computer Mouse. *Advanced Intelligent Systems*, 7, 2400966, 2025. https://doi.org/10.1002/aisy.202400966
+- Todorov, E., Erez, T., and Tassa, Y. MuJoCo: A Physics Engine for Model-Based Control. In *Proceedings of the IEEE/RSJ International Conference on Intelligent Robots and Systems*, pp. 5026–5033, 2012.
+- idoraz1. ValTrainer. GitHub repository. https://github.com/idoraz1/ValTrainer (accessed 2026-11-02)
